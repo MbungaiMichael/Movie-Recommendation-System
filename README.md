@@ -1,20 +1,24 @@
 # Movie-Recommendation-System
-Project Overview
-This project focuses on building a robust, scalable, and modular movie recommendation system using a Machine Learning pipeline. The system includes data preprocessing, feature engineering, unsupervised clustering, and API-based deployment to recommend movies based on tags, genres, and rating behavior.
-Objective
+
+## Project Overview
+This project uses a Machine Learning pipeline to build a robust, scalable, and modular movie recommendation system. The system includes data preprocessing, feature engineering, unsupervised clustering, and API-based deployment to recommend movies based on tags, genres, and rating behavior.
+
+## Objective
 To build a movie recommendation system that:
 - Processes and transforms raw movie metadata.
 - Assigns movies to clusters using unsupervised learning (KMeans).
 - Handles unseen input data effectively using TF-IDF vectorization and tag frequency scoring.
 - Exposes a prediction API using FastAPI.
-Dataset
+
+## Dataset
 The dataset consists of a merged file `merged_data1.csv` containing the following fields:
 - `tag`: Descriptive keywords associated with the movie.
 - `genres`: Pipe-separated genre labels (e.g., Action|Comedy).
 - `rating`: User-assigned rating.
 - `mean`: Mean rating of the movie.
 - `count`: Number of ratings the movie received.
-Pipeline Components
+
+## Pipeline Components
 1. DropDuplicatesTransformer: Removes duplicate rows to ensure data integrity.
 2. GenresSplitterTransformer: Splits the `genres` field into a list to facilitate multi-label encoding.
 3. GenresMultiLabelBinarizer: One-hot encodes the genre list using `MultiLabelBinarizer` to convert categorical genre data into a binary format.
@@ -22,10 +26,12 @@ Pipeline Components
 5. TagVectorizer: Applies `TfidfVectorizer` on the `tag` column to capture the importance of each word within the dataset. Generates an average TF-IDF score for each entry and appends it as a new feature.
 6. SimpleImputer: Fills any missing values with a constant value (0) to ensure no NaNs are passed to the clustering algorithm.
 7. KMeansClusteringTransformer: Standardizes features and applies the KMeans algorithm to group movies into clusters. Adds a `cluster` column representing the assigned group.
-Model Training
+
+## Model Training
 The model is trained using the full scikit-learn pipeline, which includes all preprocessing and clustering steps. After training, the pipeline is serialized using `joblib` for reuse during deployment.
-Refer to the code in `training_pipeline.py` for complete implementation details.
-Model Deployment
+Refer to the code in source_code.py` for complete implementation details.
+
+## Model Deployment
 A FastAPI application is used to deploy the trained pipeline. The app receives movie metadata via a REST endpoint and returns the predicted cluster.
 Refer to `main.py` for the FastAPI app and prediction logic.
 Sample Input
