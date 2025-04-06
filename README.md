@@ -40,6 +40,7 @@ Key Strengths
 - Modular: Each step in the pipeline is encapsulated as a transformer, enabling clean debugging and reusability.
 - Production-Ready: Scalable and deployable via FastAPI and `joblib`-based model persistence.
 ## Results
-The distribution of the data after being clustered can be seen ![Cluster Distribution](Cluster_Distribution.png) in order of size.
+The distribution of the data after being clustered can be seen [Cluster Distribution](Cluster_Distribution.png)](https://github.com/MbungaiMichael/Movie-Recommendation-System-Using-Machine-Learning-And-FastAPI/blob/main/Cluster_Distrubtion.png) in order of size.
+
  ## Conclusion
 This project demonstrates a comprehensive machine learning pipeline capable of preparing, transforming, clustering, and serving movie data for intelligent recommendations. The hybrid tag encoding technique and clean API integration make it suitable for production use cases. In benchmark tests, integrating the combined TagFrequencyScorer and TagVectorizer improved clustering quality and generalization performance significantly. Specifically, the model's ability to correctly group unseen movie data improved by an estimated 15–20%, based on internal evaluation metrics like silhouette score and cluster stability on holdout samples. This hybrid approach ensures more accurate recommendations, even for niche or newly added content.
