@@ -1,4 +1,4 @@
-# Movie-Recommendation-System
+# Movie-Recommendation-System using Machine learning and FastAPI
 
 ## Project Overview
 This project uses a Machine Learning pipeline to build a robust, scalable, and modular movie recommendation system. The system includes data preprocessing, feature engineering, unsupervised clustering, and API-based deployment to recommend movies based on tags, genres, and rating behavior.
